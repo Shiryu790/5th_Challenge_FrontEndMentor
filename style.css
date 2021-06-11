@@ -1,0 +1,252 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-size: 15px;
+  font-family: Barlow Semi Condensed, sans-serif;
+  background-color: hsl(210, 46%, 95%);
+  width: 100%;
+  height: 100%;
+}
+.container {
+  margin-bottom: 10%;
+}
+.cards {
+  display: grid;
+  grid-template-areas:
+    "A A A B C"
+    "A A A B C"
+    "D E E E C"
+    "D E E E C";
+  row-gap: 5%;
+  column-gap: 2%;
+  color: rgb(255, 255, 255);
+  margin: 3% 10% 3% 6%;
+  width: 90vw;
+  height: 90vh;
+}
+
+.presentation_card {
+  border-radius: 6px;
+}
+.presentation_card .image {
+  border-radius: 50%;
+  width: 30px;
+  display: inline;
+}
+.presentation_card .first_paragraph {
+  font-weight: 900;
+  font-size: 20px;
+  margin: 3% 0%;
+}
+.presentation_card .harmon_paragraph,
+.presentation_card .walters_paragraph {
+  margin: 15% 0%;
+}
+.presentation_card .walters_second_paragraph,
+.presentation_card .clifford_second_paragraph,
+.presentation_card .abrams_second_paragraph {
+  color: hsl(0, 0%, 100%, 0.5);
+}
+.presentation_card .whittle_second_paragraph,
+.presentation_card .harmon_second_paragraph {
+  color: rgb(0, 0, 0, 0.5);
+}
+.clifford_card {
+  grid-area: A;
+  background-color: hsl(263, 55%, 52%);
+  padding: 5%;
+}
+.walters_card {
+  grid-area: B;
+  background-color: hsl(217, 19%, 35%);
+  padding: 10%;
+}
+.whittle_card {
+  grid-area: C;
+  background-color: hsl(0, 0%, 100%);
+  color: black;
+  padding: 9%;
+}
+.harmon_card {
+  grid-area: D;
+  background-color: hsl(0, 0%, 100%);
+  color: rgb(0, 0, 0);
+  padding: 10%;
+}
+.abrams_card {
+  grid-area: E;
+  background-color: hsl(219, 29%, 14%);
+  padding: 5%;
+}
+.clifford_card {
+  position: relative;
+  z-index: -6;
+}
+.name_and_status {
+  position: absolute;
+}
+.clifford_card .name_and_status {
+  z-index: 9999;
+  margin-top: 0%;
+  margin-left: 39px;
+}
+.clifford_card .quotes {
+  z-index: -5;
+  position: absolute;
+  margin-left: 26vw;
+  margin-top: -20px;
+}
+.abrams_card .name_and_status {
+  margin-left: 40px;
+  margin-top: -0.2%;
+}
+.abrams_graduate,
+.clifford_graduate,
+.walters_graduate {
+  color: hsl(0, 0%, 100%, 0.5);
+  font-size: 12px;
+}
+.whittle_graduate,
+.harmon_graduate {
+  color: rgb(0, 0, 0, 0.5);
+  font-size: 12px;
+}
+.whittle_card .name_and_status {
+  margin-left: 50px;
+  margin-top: -0.2%;
+}
+.whittle_card .first_paragraph {
+  margin-bottom: 12%;
+  margin-top: 5%;
+}
+.harmon_card .name_and_status,
+.walters_card .name_and_status {
+  margin-left: 40px;
+}
+
+/* Medias Queries */
+
+@media screen and (min-width: 1700px) {
+  .cards {
+    height: 1vh;
+    column-gap: 2%;
+    row-gap: 150%;
+  }
+  .presentation_card .harmon_paragraph,
+  .presentation_card .walters_paragraph {
+    margin: 5% 0%;
+}
+.whittle_card .first_paragraph {
+  margin-bottom: 8%;
+  margin-top: 8%;
+}
+}
+
+@media screen and (max-width: 1045px) {
+  .cards {
+    display: flex;
+    flex-direction: column;
+    margin: 5% 0% 5% 4%;
+  }
+  .clifford_card,
+  .abrams_card {
+    height: 900px;
+    width: 60%;
+    align-self: center;
+  }
+  .clifford_card .first_paragraph,
+  .abrams_card .first_paragraph {
+    margin-top: 3vh;
+    margin-bottom: 5vh;
+  }
+  .harmon_card,
+  .walters_card {
+    height: 230px;
+    width: 60%;
+    align-self: center;
+    position: relative;
+    padding: 10% 5%;
+  }
+  .harmon_card .image,
+  .walters_card .image {
+    position: absolute;
+    top: 10%;
+    left: 8%;
+  }
+  .harmon_card .name_and_status,
+  .walters_card .name_and_status {
+    top: 10%;
+    left: 8%;
+  }
+  .harmon_card .first_paragraph,
+  .walters_card .first_paragraph {
+    margin: -3% 0% 2.5% 0%;
+  }
+}
+@media (max-width: 1045px) and (min-width: 601px) {
+  .whittle_card {
+    width: 60%;
+    align-self: center;
+    position: relative;
+    height: 100vh;
+  }
+  .whittle_card .image {
+   margin-top: -10%;
+  }
+  .whittle_card .name_and_status {
+    margin-top: -15px;
+  }
+  .whittle_card .first_paragraph {
+    margin-bottom: 5%;
+  }
+}
+
+@media (max-width: 800px) and (min-width: 600px) {
+  .harmon_card .first_paragraph,
+  .walters_card .first_paragraph {
+    margin: 4% 0% 3% 0%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .clifford_card,
+  .abrams_card {
+    width: 90vw;
+    align-self: center;
+  }
+  .walters_card,
+  .harmon_card {
+    width: 90vw;
+    align-self: center;
+  }
+  .clifford_card .quotes{
+    display: inline-block;
+    left: 26vw;
+    top: 20px;
+  }
+  .harmon_card .first_paragraph,
+  .walters_card .first_paragraph {
+    margin: 30px 0% 2.4vh 0%;
+  }
+  .harmon_card .image,
+  .walters_card .image {
+    top: 10%;
+    left: 6%;
+  }
+  .harmon_card .name_and_status,
+  .walters_card .name_and_status {
+    left: 5%;
+  }
+}
+
+@media (max-width: 400px) and (min-width: 300px) {
+  .harmon_card .first_paragraph,
+  .walters_card .first_paragraph {
+    margin: 12.3% 0% 3% 0%;
+  }
+}
